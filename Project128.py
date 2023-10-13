@@ -8,7 +8,7 @@ scraped_data = []
 
 START_URL = "https://en.wikipedia.org/wiki/List_of_brown_dwarfs/"
 
-browser = webdriver.Chrome("D:/Setup/chromedriver_win32/chromedriver.exe")
+browser = webdriver.Chrome("")
 browser.get(START_URL)
 
 
@@ -50,3 +50,5 @@ def scrape():
     headers = ['Star_name', 'Distance', 'Mass', 'Radius', 'Luminosity']
     star_df_1 = pd.DataFrame(stars_data, colums = headers)
     star_df_1.to_csv('scraped_data.csv', index = True, index_label = 'id')
+
+scrape()
